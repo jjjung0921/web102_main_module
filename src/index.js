@@ -1,37 +1,15 @@
 import React from "react";
 
-function isImageFile(file) {
-  if (typeof file !== 'string') {
-    return false;
-  }
-  return file.toLowerCase().endsWith(".png");
-}
+const element = (props) => {
+  let path = `assets/icon${props.index}.png`;
 
-function Box({ image, text }) {  // props 객체에서 image와 text를 구조 분해
-  if (image && text) {
-    if (isImageFile(image) && typeof text === "string") {
-      return (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "250px",
-            alignItems: "center",
-            lineHeight: "30px"
-          }}
-        >
-          <img src={image} alt="logo" style={{ width: "40px" }} />
-          <div>{text}</div>
-        </div>
-      );
-    } else {
-      console.error("Invalid image or text format");
-      return null;
-    }
-  } else {
-    console.error("Missing image or text");
-    return null;
-  }
-}
+  return(
+    <p>
+      <img src={path} alt="icon image" /><br />
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </p>
+  );
+};
 
-export default Box;
+export default element;

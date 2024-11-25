@@ -20,6 +20,13 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
+      {
+        test: /\.(png|jpg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: "assets/[name][ext]", // 빌드된 이미지 경로 설정
+        },
+      },
     ],
   },
   resolve: {
